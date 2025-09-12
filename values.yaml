@@ -60,10 +60,10 @@ ingress:
         - path: /swagger
           pathType: Prefix
           backend:
-            service:
-              name: dash-valo-management-api
-              port:
-                number: 80
+              service:
+                name: dash-valo-management-api
+                port:
+                  number: 80
   # tls:
   # - secretName: dev-server-tls
   #   hosts:

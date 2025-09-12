@@ -37,7 +37,8 @@ service:
   # This sets the service type more information can be found here: https://kubernetes.io/docs/concepts/services-networking/service/#publishing-services-service-types
   type: ClusterIP
   # This sets the ports more information can be found here: https://kubernetes.io/docs/concepts/services-networking/service/#field-spec-ports
-  port: 8080
+  port: 80
+  targetPort: 8080
 
 # This block is for setting up the ingress for more information can be found here: https://kubernetes.io/docs/concepts/services-networking/ingress/
 ingress:
@@ -51,10 +52,12 @@ ingress:
       paths:
         - path: /api
           pathType: Prefix
-  tls:
-  - secretName: dev-server-tls
-    hosts:
-      - dev-management-api.yuu-is87.com
+        - path: /swagger
+          pathType: Prefix
+  # tls:
+  # - secretName: dev-server-tls
+  #   hosts:
+  #     - dev-management-api.yuu-is87.com
 
 resources:
   # We usually recommend not to specify default resources and to leave this as a conscious
@@ -62,11 +65,11 @@ resources:
   # resources, such as Minikube. If you do want to specify resources, uncomment the following
   # lines, adjust them as necessary, and remove the curly braces after 'resources:'.
   limits:
-    cpu: 100m
-    memory: 128Mi
+    cpu: 8000m
+    memory: 8Gi
   requests:
-    cpu: 100m
-    memory: 128Mi
+    cpu: 1000m
+    memory: 1Gi
 
 # This section is for setting up autoscaling more information can be found here: https://kubernetes.io/docs/concepts/workloads/autoscaling/
 autoscaling:

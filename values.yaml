@@ -76,10 +76,10 @@ resources:
   # lines, adjust them as necessary, and remove the curly braces after 'resources:'.
   limits:
     cpu: 8000m
-    memory: 1Gi
+    memory: 8Gi
   requests:
     cpu: 1000m
-    memory: 256Mi
+    memory: 1Gi
 
 # This section is for setting up autoscaling more information can be found here: https://kubernetes.io/docs/concepts/workloads/autoscaling/
 autoscaling:

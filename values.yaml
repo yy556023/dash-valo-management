@@ -51,6 +51,8 @@ ingress:
       paths:
         - path: /api
           pathType: Prefix
+        - path: /swagger
+          pathType: Prefix
   tls:
   - secretName: dev-server-tls
     hosts:

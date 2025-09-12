@@ -37,7 +37,8 @@ service:
   # This sets the service type more information can be found here: https://kubernetes.io/docs/concepts/services-networking/service/#publishing-services-service-types
   type: ClusterIP
   # This sets the ports more information can be found here: https://kubernetes.io/docs/concepts/services-networking/service/#field-spec-ports
-  port: 8080
+  port: 80
+  targetPort: 8080
 
 # This block is for setting up the ingress for more information can be found here: https://kubernetes.io/docs/concepts/services-networking/ingress/
 ingress:
@@ -55,18 +56,18 @@ ingress:
           service:
             name: dash-valo-management-api
             port:
-              number: 8080
+              number: 80
         - path: /swagger
           pathType: Prefix
           backend:
           service:
             name: dash-valo-management-api
             port:
-              number: 8080
-  tls:
-  - secretName: dev-server-tls
-    hosts:
-      - dev-management-api.yuu-is87.com
+              number: 80
+  # tls:
+  # - secretName: dev-server-tls
+  #   hosts:
+  #     - dev-management-api.yuu-is87.com
 
 resources:
   # We usually recommend not to specify default resources and to leave this as a conscious

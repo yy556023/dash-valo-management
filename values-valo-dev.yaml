@@ -88,3 +88,10 @@ volumeMounts: []
 # - name: foo
 #   mountPath: "/etc/foo"
 #   readOnly: true
+
+externalServices:
+  postgresql:
+    enabled: true
+    name: postgresql
+    host: host.minikube.internal
+    port: 5432

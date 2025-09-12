@@ -35,6 +35,9 @@ spec:
             - name: http
               containerPort: {{ .Values.service.port }}
               protocol: TCP
+          env:
+            - name: ASPNETCORE_ENVIRONMENT
+            - value: {{ .Values.env.ASPNETCORE_ENVIRONMENT }}
           {{- with .Values.resources }}
           resources:
             {{- toYaml . | nindent 12 }}

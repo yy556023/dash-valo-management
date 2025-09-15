@@ -50,9 +50,7 @@ ingress:
   hosts:
     - host: dev-management-api.yuu-is87.com
       paths:
-        - path: /api
-          pathType: Prefix
-        - path: /swagger
+        - path: /
           pathType: Prefix
   # tls:
   # - secretName: dev-server-tls

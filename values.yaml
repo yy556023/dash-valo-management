@@ -98,7 +98,7 @@ externalServices:
     host: host.minikube.internal
     port: 5432
   - name: seq
-    host: seq.minikube.internal
+    host: host.minikube.internal
     port: 5341
 
 appsettingsFiles:

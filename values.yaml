@@ -83,6 +83,10 @@ volumeMounts:
   mountPath: /app/appsettings.valo-dev.json
   subPath: appsettings.valo-dev.json
   readOnly: true
+- name: appsettings-volume2
+  mountPath: /test/appsettings.valo-dev.json
+  subPath: appsettings.valo-dev.json
+  readOnly: true
 
 # Additional volumes on the output Deployment definition.
 volumes:
@@ -92,6 +96,13 @@ volumes:
       items:
         - key: appsettings.valo-dev.json
           path: appsettings.valo-dev.json
+  - name: appsettings-volume2
+    configMap:
+      name: dash-valo-management-api-config2
+      items:
+        - key: appsettings.valo-dev.json
+          path: appsettings.valo-dev.json
+
 
 externalServices:
   - name: postgresql

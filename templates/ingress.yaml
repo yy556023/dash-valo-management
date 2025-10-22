@@ -2,7 +2,7 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: {{ include "dash-valo-management.fullname" . }}
+  name: {{ include "dash-valo-management.name" . }}
   labels:
     {{- include "dash-valo-management.labels" . | nindent 4 }}
   {{- with .Values.ingress.annotations }}

@@ -2,14 +2,14 @@
 apiVersion: autoscaling/v2
 kind: HorizontalPodAutoscaler
 metadata:
-  name: {{ include "dash-valo-management.fullname" . }}
+  name: {{ include "dash-valo-management.name" . }}
   labels:
     {{- include "dash-valo-management.labels" . | nindent 4 }}
 spec:
   scaleTargetRef:
     apiVersion: apps/v1
     kind: Deployment
-    name: {{ include "dash-valo-management.fullname" . }}
+    name: {{ include "dash-valo-management.name" . }}
   minReplicas: {{ .Values.autoscaling.minReplicas }}
   maxReplicas: {{ .Values.autoscaling.maxReplicas }}
   metrics:

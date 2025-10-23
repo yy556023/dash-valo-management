@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: {{ include "dash-valo-management.fullname" . }}
+  name: {{ include "dash-valo-management.name" . }}
   labels:
     {{- include "dash-valo-management.labels" . | nindent 4 }}
 spec:
